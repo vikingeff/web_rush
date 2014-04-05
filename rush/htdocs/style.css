@@ -47,3 +47,9 @@ ul li:hover
 	background-color: #000000;
 	color: white;
 }
+label
+{
+	display: block;
+	width: 150px;
+}
+.error {color: #FF0000;}
