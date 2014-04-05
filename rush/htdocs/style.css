@@ -1,0 +1,49 @@
+#main
+{
+	width: 800px;
+	height: 200px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-bottom: 50px;
+	text-align: center;
+	float: center;
+}
+ul ul, li ul
+{
+	display: none;
+	text-align: center;
+}
+ul
+{
+	padding : 0;
+    margin : 0 auto;
+    list-style : none;
+    line-height : 21px;
+    text-align: center;
+}
+li
+{
+	width: 200px;
+	float: left;
+	text-align: center;
+}
+
+li:hover ul.first_hidden
+{
+	display: block;
+	float: none;
+	position: absolute;
+	background-color: #000000;
+	color: white;
+}
+ul li ul li
+{
+	width: 200px;
+	float: none;
+	text-align: center;
+}
+ul li:hover
+{
+	background-color: #000000;
+	color: white;
+}
