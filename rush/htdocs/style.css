@@ -1,7 +1,7 @@
 #main
 {
 	width: 800px;
-	height: 200px;
+	height: 50px;
 	margin-left: auto;
 	margin-right: auto;
 	margin-bottom: 50px;
@@ -33,8 +33,8 @@ li:hover ul.first_hidden
 	display: block;
 	float: none;
 	position: absolute;
-	background-color: #000000;
-	color: white;
+	background-color: #FFFFFF;
+	color: black;
 }
 ul li ul li
 {

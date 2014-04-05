@@ -1,4 +1,7 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
+<?php
+	include("connect.php");
+?>
 <html>
 	<head>
 		<meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
@@ -7,7 +10,7 @@
 	</head>
 	<body bgcolor="#FFFFFF">
 	<center>
-			<img src="/img/logo.png" alt="logo">
+			<img src="img/logo.png" alt="logo">
 	</center>
 	<nav id="main">
 		<ul>
@@ -18,8 +21,6 @@
 					<li>Caracos</li>
 					<li>Peignoirs, Déshabillés</li>
 					<li>Vêtements d'Intérieur</li>
-					<li>Trousses</li>
-					<li>Chaussons</li>
 				</ul>
 			</li>
 			<li><h3>Lingerie</h3>
@@ -35,13 +36,14 @@
 					<li>Tangas</li>
 					<li>Culottes</li>
 					<li>Shortys, boxers</li>
+					<li>Porte-jarretelles, Guêpières</li>
 				</ul>
 			</li>
 			<li><h3>Maillot de bain</h3>
 				<ul class="first_hidden">
 					<li>Les Hauts</li>
 					<li>Les Bas</li>
-					<li>Les 1 pièce</li>
+					<li>Les 1 Pièce</li>
 					<li>Tenues de plage</li>
 				</ul>
 			</li>
@@ -55,6 +57,12 @@
 			</li>
 		</ul>
 	</nav>
+	<?php
+		include("new_products.php");
+	?>
+	<form action="inscription.php">
+		<input type="submit" value="Inscription"/>
+	</form>
 	<hr width=100%>
 	<font face="monospace"><i><p align=right>© gleger - pcotasso 2014</p></i></fontface="monospace">
 	</body>
