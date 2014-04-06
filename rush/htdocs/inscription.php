@@ -1,5 +1,6 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
 <?php
+	session_start();
 	// define variables and set to empty values
 	$nom = $prenom = $login = $passwd = $passwd2 = $email = $adresse = $phone = "";
 	$nameErr = $emailErr = $passwdErr = $passwd2Err = $loginErr = "";
@@ -22,8 +23,11 @@
 				$login = $email;
 		}
 		else
+		{
 			$login = test_input($_POST["login"]);
-		//$login = test_input($_POST["pseudo"]);
+			$_SESSION['login'] = $login;
+			include ("test.php");
+		}
 		if (empty($_POST["passwd"]))
 			$passwdErr = "You must specify a password";
 		else if (empty($_POST["passwd"]))
@@ -34,6 +38,11 @@
 			$passwd2 = test_input($_POST["passwd2"]);
 			if (strcmp($passwd, $passwd2) !== 0)
 				$passwd2Err = "Passwords don't match";
+			else
+			{
+				$passwd = hash("whirlpool", test_input($_POST["passwd"]));
+				$passwd2 = hash("whirlpool", test_input($_POST["passwd2"]));
+			}
 			if (!preg_match("/^[a-zA-Z0-9]*$/",$passwd))
 				$passwdErr = "Password can only contain letters and number, yes i know life sucks";
 		}
@@ -52,7 +61,9 @@
 			include ("modif.php");
 			include ("validation.php");
 			mysqli_close($con);
-			header("location:index.php");
+			echo "account created"."\n";
+			header("location:account_ok.php");
+			exit();
 		}
 	}
 	function test_input($data)

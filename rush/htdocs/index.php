@@ -1,6 +1,7 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN">
 <?php
 	include("connect.php");
+	session_start();
 ?>
 <html>
 	<head>
@@ -60,9 +61,25 @@
 	<?php
 		include("new_products.php");
 	?>
-	<form action="inscription.php">
-		<input type="submit" value="Inscription"/>
-	</form>
+	<center>
+		<?php 
+			if (isset($_SESSION['loggued_on_user']) && $_SESSION['loggued_on_user'] !== "")
+			{
+				echo "<form action=\"logout.php\">";
+				echo "<input type=\"submit\" value=\"Se deconnecter\"/>";
+				echo "</form>";
+			}
+			else
+			{
+				echo "<form action=\"inscription.php\">";
+				echo "<input type=\"submit\" value=\"Inscription\"/>";
+				echo "</form>";
+				echo "<form action=\"signing.html\">";
+				echo "<input type=\"submit\" value=\"Se connecter\"/>";
+				echo "</form>";
+			}	
+		?>
+	</center>
 	<hr width=100%>
 	<font face="monospace"><i><p align=right>© gleger - pcotasso 2014</p></i></fontface="monospace">
 	</body>
